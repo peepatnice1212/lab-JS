@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let student = [
+        {
+          fullname: "นายตั้งใจ เรียนมาก",
+          age: 18,
+          year: 1,
+          gpa: 3.4,
+          help: true,
+        },
+        {
+          fullname: "นายส่งงาน ตลอดมา",
+          age: 19,
+          year: 2,
+          gpa: 3.0,
+          help: false,
+        },
+        {
+          fullname: "นางสาวใส่ใจ ดีงาม",
+          age: 20,
+          year: 3,
+          gpa: 2.9,
+          help: true,
+        },
+      ];
+      let d = new Date();
+      let scholarship = [
+        {
+          status: "ได้ทุนการศึกษา",
+          comment: "เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย",
+        },
+        {
+          status: "ไม่ได้ทุนการศึกษา",
+          comment: "เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังไม่ได้ช่วยงานภาควิชา",
+        },
+      ];
+      for (let i = 0; i < student.length; i++) {
+        if (
+          student[i].gpa >= 3.2 ||
+          (student[i].year >= 2 &&
+            student[i].help == true &&
+            student[i].gpa >= 2.75)
+        ) {
+          console.log(
+            student[i].fullname +
+              " " +
+              "เกิดเมื่อปี" +
+              " " +
+              (d.getFullYear() + 543 - student[i].age - 1) +
+              " " +
+              scholarship[0].status +
+              " " +
+              scholarship[0].comment
+          );
+        } else {
+          console.log(
+            student[i].fullname +
+              " " +
+              "เกิดเมื่อปี" +
+              " " +
+              (d.getFullYear() + 543 - student[i].age - 1) +
+              " " +
+              scholarship[1].status +
+              " " +
+              scholarship[1].comment
+          );
+        }
+      }
+      for (let i = 0; i < student.length; i++) {
+        if (
+          student[i].gpa >= 3.2 ||
+          (student[i].year >= 2 &&
+            student[i].help == true &&
+            student[i].gpa >= 2.75)
+        ) {
+          console.log(
+            "ชั้นปีที่" +
+              " " +
+              [i + 1] +
+              "\n" +
+              student[i].fullname +
+              " " +
+              scholarship[0].comment
+          );
+        } else {
+          console.log("ชั้นปีที่" + " " + [i + 1] + "\n" + "ไม่มี");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
